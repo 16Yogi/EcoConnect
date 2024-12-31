@@ -1,0 +1,12 @@
+#footer-cf{
+    background-color: black;
+}
+#footer-cf hr{
+    margin: 30px 0;
+    background-color: white;
+}
+#footer-cf a{
+    font-weight: 700;
+    border-radius: 3px;
+    color: white;
+}

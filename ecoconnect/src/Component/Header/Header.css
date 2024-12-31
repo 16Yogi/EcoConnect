@@ -1,0 +1,13 @@
+#nav-cf{
+    box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+}
+#nav-cf h2{
+    font-size: 20px;
+    font-weight: 700;
+}
+#nav-cf h2 span{
+    color: rgb(45, 117, 250);
+}
+#nav-cf a{
+    font-weight: 700;
+}
