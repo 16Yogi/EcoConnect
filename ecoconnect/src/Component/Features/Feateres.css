@@ -1,3 +1,20 @@
-#fea-cf #fea-c {
-    /* width: 80%; */
+#fea-cf #fea-c #item{
+    height: 200px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    cursor: pointer;
+}
+#fea-cf #fea-c #item:hover{
+    color: white;
+    background-color: #17a2b8;;
+}
+#fea-cf #fea-c #item i{
+    font-size:30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+#fea-cf #fea-c #item h3{
+    font-size: 22px;
+    font-weight: 700;
 }

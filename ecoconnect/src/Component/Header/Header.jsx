@@ -1,6 +1,26 @@
-import React from "react";
-import './Header.css'
+import React, { useState, useEffect } from "react";
+import './Header.css';
+import { Link, useNavigate } from "react-router-dom";
+
 export default function Header() {
+  const [user, setUser] = useState(null); // Store user data
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Check if the user is logged in (for example, check localStorage)
+    const loggedInUser = localStorage.getItem('user');
+    if (loggedInUser) {
+      setUser(JSON.parse(loggedInUser));
+    }
+  }, []);
+
+  const handleLogout = () => {
+    // Clear user data and log them out
+    localStorage.removeItem('user');
+    setUser(null); // Reset user state
+    navigate('/'); // Redirect to home or login page
+  };
+
   return (
     <>
       <div className="container-fluid bg-light mx-auto py-2" id="nav-cf">
@@ -24,25 +44,29 @@ export default function Header() {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">
-                  <a className="nav-link" href="#">
+                  <Link className="nav-link" to="/">
                     Home <span className="sr-only">(current)</span>
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <Link className="nav-link" to="/about">
                     About
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <form className="form-inline my-2 my-lg-0">
-                <a href="/" className="mx-1 nav-link">Registration</a>
-                <a href="/" className="mx-1 nav-link">Login</a>
-                {/* <button
-                  className="btn btn-info my-2 my-sm-0"
-                  type="submit"
-                >
-                  <i className="fa-solid fa-user"></i> */}
-                {/* </button> */}
+                {/* If user is logged in, show the username and logout button */}
+                {user ? (
+                  <>
+                    <span className="navbar-text mx-2">Welcome, {user.name}</span>
+                    <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
+                  </>
+                ) : (
+                  <>
+                    <Link to="/registration" className="mx-1 nav-link">Registration</Link>
+                    <Link to="/login" className="mx-1 nav-link">Login</Link>
+                  </>
+                )}
               </form>
             </div>
           </nav>

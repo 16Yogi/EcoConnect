@@ -7,16 +7,16 @@ export default function Footer() {
         <div className="py-5">
           <div className="col text-center">
             <a href="/" className="px-3 py-2 mx-2 bg-primary">
-              <i class="fa-brands fa-github"></i>
+              <i className="fa-brands fa-github"></i>
             </a>
             <a href="/" className="px-3 py-2 mx-2 bg-primary">
-              <i class="fa-brands fa-linkedin-in"></i>
+              <i className="fa-brands fa-linkedin-in"></i>
             </a>
             <a href="/" className="px-3 py-2 mx-2 bg-primary">
-              <i class="fa-solid fa-globe"></i>
+              <i className="fa-solid fa-globe"></i>
             </a>
             <a href="/" className="px-3 py-2 mx-2 bg-primary">
-              <i class="fa-brands fa-instagram"></i>
+              <i className="fa-brands fa-instagram"></i>
             </a>
             <hr />
             <div className="col">
